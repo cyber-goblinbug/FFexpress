@@ -1,2 +1,11 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<section class="home-content">
+    <h2>Welcome to Akashic Records</h2>
+    <p>Use the navigation above to open your writing categories and track your progress.</p>
+
+    {{#if entries.length}}
+        <p>You have {{entries.length}} logged writing entries.</p>
+        <p>Total words written: {{totalWords}}</p>
+    {{else}}
+        <p>No entries yet — add a writing session to start tracking your work.</p>
+    {{/if}}
+</section>

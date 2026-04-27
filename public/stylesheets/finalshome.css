@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Cinzel:wght@400;600&display=swap');
+
+/* PAGE BACKGROUND */
+body {
+    background-color: #1a120b;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* SCROLL CARD */
+.writing-card {
+    background-color: #f5e6c8;
+    border: 3px solid #b8975a;
+    border-radius: 6px;
+    max-width: 1100px;
+    width: 100%;
+    padding: 70px 60px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+}
+
+/* TITLE */
+h1 {
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 110px;
+    color: #3b200a;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* NAV LIST */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* EACH NAV ITEM */
+nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 28px;
+    border: 1px solid #b8975a;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+nav ul li:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* IMAGES */
+nav ul li img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #b8975a;
+}
+
+/* LINKS */
+nav ul li a {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3b200a;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.home-content {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(245, 230, 200, 0.3);
+    border-radius: 18px;
+    padding: 36px 32px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    color: #f5e6c8;
+}
+
+.home-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f5e6c8;
+}
+
+.home-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 auto 18px;
+    max-width: 700px;
+    color: #f5e6c8;
+}
