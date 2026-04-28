@@ -3,17 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novels — Akashic Records</title>
+    <meta name="author" content="Willie Weatherspoon">
+    <meta name="description" content="Creative writing progress tracker">
+    <meta name="keywords" content="writing, tracker, novels, comics, games">
+    <title>Novel Tracker</title>
     <link rel="stylesheet" href="/stylesheets/finalshome.css">
     <script src="/javascripts/finals.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Novels</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your novel writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Novel Tracker</h1>
+</header>
+
+<main>
+
+    <!-- NEW PROJECT BUTTON -->
+    <section id="dashboard">
+        <button id="new-project-btn">+ Start New Novel</button>
+    </section>
+
+    <!-- CREATE PROJECT FORM (hidden by default) -->
+    <section id="create-project" style="display: none;">
+        <h2>New Novel</h2>
+
+        <form id="project-form">
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Novel title" required>
+
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" placeholder="e.g. Fantasy, Romance, Sci-Fi">
+
+            <label for="goal">Word Count Goal</label>
+            <input type="number" id="goal" placeholder="e.g. 80000" required>
+
+            <div class="form-buttons">
+                <button type="submit">Create</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- PROJECT LIBRARY -->
+    <section id="project-library">
+        <h2>Project Library</h2>
+
+        <!-- ACTIVE PROJECTS -->
+        <h3>Active</h3>
+        <div id="active-projects" class="project-grid">
+            <p class="empty-msg">No active novels yet.</p>
+        </div>
+
+        <!-- ABANDONED PROJECTS -->
+        <h3>Abandoned</h3>
+        <div id="abandoned-projects" class="project-grid">
+            <p class="empty-msg">No abandoned novels.</p>
+        </div>
+    </section>
+
+</main>
+
+
 </body>
 </html>
