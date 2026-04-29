@@ -7,7 +7,8 @@
     <meta name="description" content="Creative writing progress tracker">
     <meta name="keywords" content="writing, tracker, novels, comics, games">
     <title>Novel Tracker</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
+    <link rel="stylesheet" href="/public/stylesheets/novelstyle.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="/javascripts/finals.js" defer></script>
 </head>
 <body>
@@ -60,6 +61,12 @@
         <div id="abandoned-projects" class="project-grid">
             <p class="empty-msg">No abandoned novels.</p>
         </div>
+    </section>
+
+    <!-- PROGRESS CHART -->
+    <section id="chart-section">
+        <h2>Word Count Progress</h2>
+        <canvas id="progress-chart"></canvas>
     </section>
 
 </main>
