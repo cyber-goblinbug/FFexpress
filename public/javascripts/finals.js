@@ -5,6 +5,7 @@ var createSection = document.getElementById('create-project');
 var cancelBtn     = document.getElementById('cancel-btn');
 var form          = document.getElementById('project-form');
 var activeGrid    = document.getElementById('active-projects');
+var finishedGrid  = document.getElementById('finished-projects');
 var abandonedGrid = document.getElementById('abandoned-projects');
 
 // ── LOAD SAVED PROJECTS ──────────────────────────────
@@ -139,7 +140,7 @@ form.addEventListener('submit', function(e) {
         id:       Date.now(),
         title:    document.getElementById('title').value,
         genre:    document.getElementById('genre').value,
-        goal:     parseInt(document.getElementById('goal').value),
+        goal:     parseInt(document.getElementById('goal').value),  // daily word count goal
         progress: 0,
         status:   'active',
         color:    'rgb(' + Math.floor(Math.random()*200) + ',' + Math.floor(Math.random()*200) + ',' + Math.floor(Math.random()*200) + ')',
@@ -158,11 +159,14 @@ form.addEventListener('submit', function(e) {
 
 function renderProjects() {
     var active    = [];
+    var finished  = [];
     var abandoned = [];
 
     for (var i = 0; i < projects.length; i++) {
         if (projects[i].status === 'active') {
             active.push(projects[i]);
+        } else if (projects[i].status === 'finished') {
+            finished.push(projects[i]);
         } else {
             abandoned.push(projects[i]);
         }
@@ -174,6 +178,15 @@ function renderProjects() {
         activeGrid.innerHTML = '';
         for (var i = 0; i < active.length; i++) {
             activeGrid.innerHTML += buildCard(active[i]);
+        }
+    }
+
+    if (finished.length === 0) {
+        finishedGrid.innerHTML = '<p class="empty-msg">No finished novels yet.</p>';
+    } else {
+        finishedGrid.innerHTML = '';
+        for (var i = 0; i < finished.length; i++) {
+            finishedGrid.innerHTML += buildCard(finished[i]);
         }
     }
 
@@ -195,18 +208,34 @@ function buildCard(p) {
     var pct = Math.round((p.progress / p.goal) * 100);
     if (pct > 100) pct = 100;
 
-    var buttonLabel = 'Abandon';
-    if (p.status === 'abandoned') buttonLabel = 'Reactivate';
+    var abandonBtn = '';
+    if (p.status === 'active') {
+        abandonBtn = '<button onclick="toggleStatus(' + p.id + ', \'abandoned\')">Abandon</button>';
+    } else if (p.status === 'abandoned') {
+        abandonBtn = '<button onclick="toggleStatus(' + p.id + ', \'active\')">Reactivate</button>';
+    }
+
+    var finishBtn = '';
+    if (p.status === 'active') {
+        finishBtn = '<button onclick="toggleStatus(' + p.id + ', \'finished\')">Finished</button>';
+    } else if (p.status === 'finished') {
+        finishBtn = '<button onclick="toggleStatus(' + p.id + ', \'active\')">Reactivate</button>';
+    }
+
+    var logBtn = '';
+    if (p.status !== 'finished') {
+        logBtn = '<button onclick="logProgress(' + p.id + ')">+ Log Words</button>';
+    }
 
     return '<div class="project-card">'
         + '<h4>' + p.title + '</h4>'
         + '<p class="genre">' + (p.genre || 'No genre listed') + '</p>'
-        + '<p>' + p.progress + ' / ' + p.goal + ' words</p>'
-        + '<div class="progress-bar"><div class="progress-fill" style="width:' + pct + '%"></div></div>'
-        + '<p class="pct">' + pct + '%</p>'
+        + '<p>Daily Goal: ' + p.goal + ' words</p>'
+        + '<p>Total Written: ' + p.progress + ' words</p>'
         + '<div class="card-buttons">'
-        + '<button onclick="logProgress(' + p.id + ')">+ Log Words</button>'
-        + '<button onclick="toggleStatus(' + p.id + ')">' + buttonLabel + '</button>'
+        + logBtn
+        + finishBtn
+        + abandonBtn
         + '<button onclick="deleteProject(' + p.id + ')">Delete</button>'
         + '</div>'
         + '</div>';
@@ -218,10 +247,13 @@ function logProgress(id) {
     var words = parseInt(prompt('How many words did you write?'));
     if (!words || words < 1) return;
 
+    var date = prompt('Enter the date (e.g. 04/29/2026):');
+    if (!date) return;
+
     for (var i = 0; i < projects.length; i++) {
         if (projects[i].id === id) {
             projects[i].progress += words;
-            projects[i].log.push({ words: words, date: new Date().toLocaleDateString() });
+            projects[i].log.push({ words: words, date: date });
         }
     }
 
@@ -231,14 +263,10 @@ function logProgress(id) {
 
 // ── ABANDON OR REACTIVATE ────────────────────────────
 
-function toggleStatus(id) {
+function toggleStatus(id, newStatus) {
     for (var i = 0; i < projects.length; i++) {
         if (projects[i].id === id) {
-            if (projects[i].status === 'active') {
-                projects[i].status = 'abandoned';
-            } else {
-                projects[i].status = 'active';
-            }
+            projects[i].status = newStatus;
         }
     }
     save();

@@ -7,7 +7,7 @@
     <meta name="description" content="Creative writing progress tracker">
     <meta name="keywords" content="writing, tracker, novels, comics, games">
     <title>Novel Tracker</title>
-    <link rel="stylesheet" href="/public/stylesheets/novelstyle.css">
+    <link rel="stylesheet" href="/stylesheets/novelstyle.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="/javascripts/finals.js" defer></script>
 </head>
@@ -36,8 +36,8 @@
             <label for="genre">Genre</label>
             <input type="text" id="genre" placeholder="e.g. Fantasy, Romance, Sci-Fi">
 
-            <label for="goal">Word Count Goal</label>
-            <input type="number" id="goal" placeholder="e.g. 80000" required>
+            <label for="goal">Daily Word Count Goal</label>
+            <input type="number" id="goal" placeholder="e.g. 1000" required>
 
             <div class="form-buttons">
                 <button type="submit">Create</button>
@@ -54,6 +54,12 @@
         <h3>Active</h3>
         <div id="active-projects" class="project-grid">
             <p class="empty-msg">No active novels yet.</p>
+        </div>
+
+        <!-- FINISHED PROJECTS -->
+        <h3>Finished</h3>
+        <div id="finished-projects" class="project-grid">
+            <p class="empty-msg">No finished novels yet.</p>
         </div>
 
         <!-- ABANDONED PROJECTS -->
