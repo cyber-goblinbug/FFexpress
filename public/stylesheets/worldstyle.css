@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,300&family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,300&display=swap');
 
 /* ── RESET ── */
 *, *::before, *::after {
@@ -10,10 +10,6 @@
 /* ── PAGE ── */
 body {
     background-color: #0d0b14;
-    background-image:
-        radial-gradient(ellipse 70% 40% at 50% 0%, #1e1040 0%, transparent 60%),
-        radial-gradient(ellipse 40% 30% at 10% 80%, #0f0820 0%, transparent 50%),
-        radial-gradient(ellipse 40% 30% at 90% 80%, #0f0820 0%, transparent 50%);
     font-family: 'Crimson Pro', Georgia, serif;
     color: #e8dfc8;
     min-height: 100vh;
@@ -48,9 +44,6 @@ h1 {
     color: #c9a84c;
     letter-spacing: 5px;
     text-transform: uppercase;
-    text-shadow:
-        0 0 20px rgba(201, 168, 76, 0.4),
-        0 0 60px rgba(201, 168, 76, 0.15);
 }
 
 .subtitle {
@@ -58,7 +51,6 @@ h1 {
     font-size: 16px;
     color: #7a6fa0;
     margin-top: 8px;
-    letter-spacing: 1px;
 }
 
 /* ── MAIN ── */
@@ -70,40 +62,25 @@ main {
 /* ── SECTIONS ── */
 section {
     background-color: #12101e;
-    border: 1px solid rgba(201, 168, 76, 0.25);
+    border: 1px solid #c9a84c;
     border-radius: 4px;
     padding: 36px 40px;
     margin-bottom: 28px;
-    box-shadow:
-        0 0 0 3px #0d0b14,
-        0 8px 40px rgba(0, 0, 0, 0.7),
-        inset 0 0 40px rgba(100, 60, 180, 0.04);
-    position: relative;
-}
-
-/* gold top line accent */
-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 10%; right: 10%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, #c9a84c, transparent);
-    opacity: 0.4;
 }
 
 h2 {
     font-family: 'Cinzel', serif;
     font-size: 22px;
-    font-weight: 600;
     color: #c9a84c;
     letter-spacing: 3px;
     text-transform: uppercase;
-    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    border-bottom: 1px solid #c9a84c;
     padding-bottom: 10px;
     margin-bottom: 24px;
 }
 
-/* ── NEW ENTRY BUTTON ── */
+/* ── BUTTONS ── */
+#new-world-btn,
 #new-entry-btn {
     font-family: 'Cinzel', serif;
     font-size: 13px;
@@ -111,19 +88,36 @@ h2 {
     text-transform: uppercase;
     background-color: transparent;
     color: #c9a84c;
-    border: 1px solid rgba(201, 168, 76, 0.5);
+    border: 1px solid #c9a84c;
     padding: 12px 28px;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
+#new-world-btn:hover,
 #new-entry-btn:hover {
-    background-color: rgba(201, 168, 76, 0.1);
-    border-color: #c9a84c;
+    background-color: #1e1a30;
+}
+
+#back-to-worlds-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #c9a84c;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: block;
+}
+
+#back-to-worlds-btn:hover {
+    text-decoration: underline;
 }
 
 /* ── FORM ── */
+#world-form label,
 #entry-form label {
     display: block;
     font-family: 'Cinzel', serif;
@@ -135,12 +129,14 @@ h2 {
     margin-bottom: 6px;
 }
 
+#world-form input,
+#world-form textarea,
 #entry-form input,
 #entry-form select,
 #entry-form textarea {
     width: 100%;
     background-color: #0d0b14;
-    border: 1px solid rgba(201, 168, 76, 0.3);
+    border: 1px solid #c9a84c;
     border-radius: 3px;
     padding: 10px 14px;
     font-family: 'Crimson Pro', serif;
@@ -149,16 +145,11 @@ h2 {
     outline: none;
 }
 
-#entry-form input:focus,
-#entry-form select:focus,
-#entry-form textarea:focus {
-    border-color: rgba(201, 168, 76, 0.7);
-}
-
 #entry-form select option {
     background-color: #12101e;
 }
 
+#world-form textarea,
 #entry-form textarea {
     resize: vertical;
 }
@@ -178,36 +169,33 @@ h2 {
     padding: 10px 24px;
     border-radius: 3px;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
 .form-buttons button[type="submit"] {
-    background-color: rgba(201, 168, 76, 0.12);
+    background-color: transparent;
     color: #c9a84c;
-    border: 1px solid rgba(201, 168, 76, 0.5);
+    border: 1px solid #c9a84c;
 }
 
 .form-buttons button[type="submit"]:hover {
-    background-color: rgba(201, 168, 76, 0.22);
+    background-color: #1e1a30;
 }
 
 .form-buttons button[type="button"] {
     background-color: transparent;
     color: #7a6fa0;
-    border: 1px solid rgba(120, 100, 160, 0.3);
+    border: 1px solid #7a6fa0;
 }
 
 .form-buttons button[type="button"]:hover {
-    border-color: rgba(120, 100, 160, 0.6);
-    color: #b5aee0;
+    background-color: #1e1a30;
 }
 
-/* ── FILTER BAR ── */
+/* ── FILTER BUTTONS ── */
 #filter-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 4px;
 }
 
 .filter-btn {
@@ -217,22 +205,65 @@ h2 {
     text-transform: uppercase;
     padding: 6px 14px;
     border-radius: 2px;
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    border: 1px solid #7a6fa0;
     background-color: transparent;
     color: #7a6fa0;
     cursor: pointer;
-    transition: all 0.2s;
 }
 
 .filter-btn:hover {
-    border-color: rgba(201, 168, 76, 0.5);
+    border-color: #c9a84c;
     color: #c9a84c;
 }
 
 .filter-btn.active {
-    background-color: rgba(201, 168, 76, 0.1);
     border-color: #c9a84c;
     color: #c9a84c;
+    background-color: #1e1a30;
+}
+
+/* ── WORLD GRID ── */
+#world-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 700px) { #world-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { #world-grid { grid-template-columns: 1fr; } }
+
+/* ── WORLD CARD ── */
+.world-card {
+    background-color: #0d0b14;
+    border: 1px solid #c9a84c;
+    border-radius: 4px;
+    padding: 24px 20px;
+}
+
+.world-card h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.world-desc {
+    font-style: italic;
+    font-size: 14px;
+    color: #9a92b8;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.entry-count {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7a6fa0;
+    margin-bottom: 14px;
 }
 
 /* ── ENTRY GRID ── */
@@ -248,21 +279,14 @@ h2 {
 /* ── ENTRY CARD ── */
 .entry-card {
     background-color: #0d0b14;
-    border: 1px solid rgba(201, 168, 76, 0.2);
+    border: 1px solid #c9a84c;
     border-radius: 4px;
     padding: 20px;
-    position: relative;
-    transition: border-color 0.2s;
-}
-
-.entry-card:hover {
-    border-color: rgba(201, 168, 76, 0.45);
 }
 
 .entry-card h4 {
     font-family: 'Cinzel', serif;
     font-size: 14px;
-    font-weight: 600;
     color: #e8dfc8;
     letter-spacing: 1px;
     margin-bottom: 6px;
@@ -275,7 +299,6 @@ h2 {
     text-transform: uppercase;
     color: #c9a84c;
     margin-bottom: 10px;
-    opacity: 0.7;
 }
 
 .entry-notes {
@@ -299,15 +322,16 @@ h2 {
     margin-bottom: 14px;
 }
 
-.status-draft       { color: #7a6fa0; border-color: rgba(122, 111, 160, 0.4); }
-.status-in-progress { color: #c9a84c; border-color: rgba(201, 168, 76, 0.4); }
-.status-complete    { color: #6ab87a; border-color: rgba(106, 184, 122, 0.4); }
+.status-draft       { color: #7a6fa0; border-color: #7a6fa0; }
+.status-in-progress { color: #c9a84c; border-color: #c9a84c; }
+.status-complete    { color: #6ab87a; border-color: #6ab87a; }
 
 /* ── CARD BUTTONS ── */
 .card-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    margin-top: 10px;
 }
 
 .card-buttons button {
@@ -318,20 +342,19 @@ h2 {
     padding: 5px 10px;
     border-radius: 2px;
     cursor: pointer;
-    transition: all 0.2s;
     background-color: transparent;
     color: #7a6fa0;
-    border: 1px solid rgba(122, 111, 160, 0.3);
+    border: 1px solid #7a6fa0;
 }
 
 .card-buttons button:hover {
     color: #c9a84c;
-    border-color: rgba(201, 168, 76, 0.5);
+    border-color: #c9a84c;
 }
 
 .card-buttons .btn-delete:hover {
     color: #c05a3c;
-    border-color: rgba(192, 90, 60, 0.4);
+    border-color: #c05a3c;
 }
 
 /* ── EMPTY MESSAGE ── */

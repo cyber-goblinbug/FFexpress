@@ -12,77 +12,123 @@
 <header>
     <a href="/" class="back-link">← Back to Archive</a>
     <h1>Worldbuilding</h1>
-    <p class="subtitle">Chronicle your world, one entry at a time</p>
+    <p class="subtitle">Chronicle your worlds, one entry at a time</p>
 </header>
 
 <main>
 
-    <!-- NEW ENTRY BUTTON -->
-    <section id="dashboard">
-        <button id="new-entry-btn">+ Add New Entry</button>
-    </section>
+    <!-- ── WORLD LIBRARY (shown first) ── -->
+    <div id="world-library-view">
 
-    <!-- CREATE ENTRY FORM (hidden by default) -->
-    <section id="create-entry" style="display: none;">
-        <h2>New Entry</h2>
+        <section id="world-dashboard">
+            <button id="new-world-btn">+ Create New World</button>
+        </section>
 
-        <form id="entry-form">
+        <!-- CREATE WORLD FORM (hidden by default) -->
+        <section id="create-world" style="display: none;">
+            <h2>New World</h2>
+            <form id="world-form">
 
-            <label for="entry-title">Entry Title</label>
-            <input type="text" id="entry-title" placeholder="e.g. The Kingdom of Valdris" required>
+                <label for="world-name">World Name</label>
+                <input type="text" id="world-name" placeholder="e.g. Eldoria" required>
 
-            <label for="category">Category</label>
-            <select id="category">
-                <option value="lore">Lore</option>
-                <option value="maps">Maps & Geography</option>
-                <option value="factions">Factions & Organizations</option>
-                <option value="characters">Characters</option>
-                <option value="history">History & Timeline</option>
-                <option value="magic">Magic & Systems</option>
-                <option value="culture">Culture & Religion</option>
-                <option value="other">Other</option>
-            </select>
+                <label for="world-desc">Description</label>
+                <textarea id="world-desc" placeholder="A brief description of this world..." rows="3"></textarea>
 
-            <label for="entry-notes">Notes</label>
-            <textarea id="entry-notes" placeholder="Describe this entry..." rows="5"></textarea>
+                <div class="form-buttons">
+                    <button type="submit">Create World</button>
+                    <button type="button" id="cancel-world-btn">Cancel</button>
+                </div>
 
-            <label for="entry-status">Status</label>
-            <select id="entry-status">
-                <option value="draft">Draft</option>
-                <option value="in-progress">In Progress</option>
-                <option value="complete">Complete</option>
-            </select>
+            </form>
+        </section>
 
-            <div class="form-buttons">
-                <button type="submit">Save Entry</button>
-                <button type="button" id="cancel-btn">Cancel</button>
+        <!-- WORLD GRID -->
+        <section id="world-library">
+            <h2>Your Worlds</h2>
+            <div id="world-grid">
+                <p class="empty-msg">No worlds created yet. Begin your first.</p>
             </div>
+        </section>
 
-        </form>
-    </section>
+    </div>
 
-    <!-- CATEGORY FILTER BAR -->
-    <section id="filter-bar">
-        <h2>The Archive</h2>
-        <div id="filter-buttons">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="lore">Lore</button>
-            <button class="filter-btn" data-filter="maps">Maps & Geography</button>
-            <button class="filter-btn" data-filter="factions">Factions</button>
-            <button class="filter-btn" data-filter="characters">Characters</button>
-            <button class="filter-btn" data-filter="history">History</button>
-            <button class="filter-btn" data-filter="magic">Magic & Systems</button>
-            <button class="filter-btn" data-filter="culture">Culture</button>
-            <button class="filter-btn" data-filter="other">Other</button>
-        </div>
-    </section>
+    <!-- ── WORLD DETAIL VIEW (hidden until a world is selected) ── -->
+    <div id="world-detail-view" style="display: none;">
 
-    <!-- ENTRY LIBRARY -->
-    <section id="entry-library">
-        <div id="entry-grid">
-            <p class="empty-msg">No entries yet. Start building your world.</p>
-        </div>
-    </section>
+        <section id="world-header">
+            <button id="back-to-worlds-btn">← All Worlds</button>
+            <h2 id="world-detail-title">World Name</h2>
+            <p id="world-detail-desc" class="subtitle"></p>
+        </section>
+
+        <!-- NEW ENTRY BUTTON -->
+        <section id="entry-dashboard">
+            <button id="new-entry-btn">+ Add New Entry</button>
+        </section>
+
+        <!-- CREATE ENTRY FORM (hidden by default) -->
+        <section id="create-entry" style="display: none;">
+            <h2>New Entry</h2>
+            <form id="entry-form">
+
+                <label for="entry-title">Entry Title</label>
+                <input type="text" id="entry-title" placeholder="e.g. The Kingdom of Valdris" required>
+
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="lore">Lore</option>
+                    <option value="maps">Maps & Geography</option>
+                    <option value="factions">Factions & Organizations</option>
+                    <option value="characters">Characters</option>
+                    <option value="history">History & Timeline</option>
+                    <option value="magic">Magic & Systems</option>
+                    <option value="culture">Culture & Religion</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="entry-notes">Notes</label>
+                <textarea id="entry-notes" placeholder="Describe this entry..." rows="5"></textarea>
+
+                <label for="entry-status">Status</label>
+                <select id="entry-status">
+                    <option value="draft">Draft</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="complete">Complete</option>
+                </select>
+
+                <div class="form-buttons">
+                    <button type="submit">Save Entry</button>
+                    <button type="button" id="cancel-entry-btn">Cancel</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- CATEGORY FILTER BAR -->
+        <section id="filter-bar">
+            <h2>The Archive</h2>
+            <div id="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="lore">Lore</button>
+                <button class="filter-btn" data-filter="maps">Maps & Geography</button>
+                <button class="filter-btn" data-filter="factions">Factions</button>
+                <button class="filter-btn" data-filter="characters">Characters</button>
+                <button class="filter-btn" data-filter="history">History</button>
+                <button class="filter-btn" data-filter="magic">Magic & Systems</button>
+                <button class="filter-btn" data-filter="culture">Culture</button>
+                <button class="filter-btn" data-filter="other">Other</button>
+            </div>
+        </section>
+
+        <!-- ENTRY GRID -->
+        <section id="entry-library">
+            <div id="entry-grid">
+                <p class="empty-msg">No entries yet. Start building your world.</p>
+            </div>
+        </section>
+
+    </div>
 
 </main>
 
