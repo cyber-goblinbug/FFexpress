@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── PAGE ── */
+body {
+    background-color: #ff6b9d;
+    background-image:
+        radial-gradient(circle at 10% 20%, #ff9de2 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, #c77dff 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ff6b9d 0%, transparent 70%);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #1a1a2e;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+}
+
+/* ── HEADER ── */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: 'Zen Dots', cursive;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.back-link:hover {
+    background-color: rgba(0,0,0,0.35);
+}
+
+h1 {
+    font-family: 'Zen Dots', cursive;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow:
+        3px 3px 0px #7b2ff7,
+        6px 6px 0px rgba(123,47,247,0.3);
+}
+
+/* ── MAIN ── */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ── SECTIONS ── */
+section {
+    background-color: #fff;
+    border: 3px solid #1a1a2e;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 6px 6px 0px #7b2ff7;
+}
+
+h2 {
+    font-family: 'Zen Dots', cursive;
+    font-size: 20px;
+    color: #7b2ff7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ff6b9d;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Zen Dots', cursive;
+    font-size: 13px;
+    color: #ff6b9d;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+
+/* ── BUTTONS ── */
+#new-series-btn,
+#new-chapter-btn,
+#new-volume-btn,
+#new-arc-btn {
+    font-family: 'Zen Dots', cursive;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #7b2ff7;
+    color: #fff;
+    border: 3px solid #1a1a2e;
+    padding: 10px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #1a1a2e;
+}
+
+#new-series-btn:hover,
+#new-chapter-btn:hover,
+#new-volume-btn:hover,
+#new-arc-btn:hover {
+    background-color: #ff6b9d;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #1a1a2e;
+}
+
+#back-to-series-btn {
+    font-family: 'Zen Dots', cursive;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: #7b2ff7;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#back-to-series-btn:hover {
+    color: #ff6b9d;
+}
+
+/* ── TABS ── */
+#series-tabs {
+    background-color: #fff0f8;
+    border: 3px solid #1a1a2e;
+    border-radius: 12px;
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    box-shadow: 4px 4px 0px #1a1a2e;
+}
+
+.tab-btn {
+    font-family: 'Zen Dots', cursive;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 2px solid #1a1a2e;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #1a1a2e;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: #7b2ff7;
+    color: #fff;
+    border-color: #7b2ff7;
+}
+
+.tab-btn:hover {
+    background-color: #ff6b9d;
+    color: #fff;
+    border-color: #ff6b9d;
+}
+
+/* ── FORM ── */
+form label {
+    display: block;
+    font-family: 'Zen Dots', cursive;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #7b2ff7;
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    background-color: #fff0f8;
+    border: 2px solid #ff6b9d;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 15px;
+    color: #1a1a2e;
+    outline: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #7b2ff7;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+/* ── FORM BUTTONS ── */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    font-family: 'Zen Dots', cursive;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    border: 2px solid #1a1a2e;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #1a1a2e;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #7b2ff7;
+    color: #fff;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #ff6b9d;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #fff;
+    color: #1a1a2e;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #f0e0ff;
+}
+
+/* ── SERIES GRID ── */
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) { .series-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .series-grid { grid-template-columns: 1fr; } }
+
+/* ── SERIES CARD ── */
+.series-card {
+    background-color: #fff0f8;
+    border: 3px solid #1a1a2e;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 4px 4px 0px #c77dff;
+}
+
+.series-card h4 {
+    font-family: 'Zen Dots', cursive;
+    font-size: 13px;
+    color: #7b2ff7;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.series-card p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* ── CHAPTER / VOLUME / ARC GRID ── */
+.chapter-grid,
+.volume-grid,
+.arc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) {
+    .chapter-grid, .volume-grid, .arc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── CHAPTER / VOLUME / ARC CARD ── */
+.chapter-card,
+.volume-card,
+.arc-card {
+    background-color: #fff0f8;
+    border: 2px solid #ff6b9d;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.chapter-card h4,
+.volume-card h4,
+.arc-card h4 {
+    font-family: 'Zen Dots', cursive;
+    font-size: 12px;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.chapter-card p,
+.volume-card p,
+.arc-card p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* ── STATUS BADGE ── */
+.status-badge {
+    display: inline-block;
+    font-family: 'Zen Dots', cursive;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+
+.status-planned     { color: #aaa; border-color: #aaa; }
+.status-scripting   { color: #ff9de2; border-color: #ff9de2; }
+.status-sketching   { color: #c77dff; border-color: #c77dff; }
+.status-inking      { color: #7b2ff7; border-color: #7b2ff7; }
+.status-toning      { color: #ff6b9d; border-color: #ff6b9d; }
+.status-in-progress { color: #ffb347; border-color: #ffb347; }
+.status-complete    { color: #5cb85c; border-color: #5cb85c; }
+
+/* ── CARD BUTTONS ── */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.card-buttons button {
+    font-family: 'Zen Dots', cursive;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 2px solid #7b2ff7;
+    border-radius: 14px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #7b2ff7;
+}
+
+.card-buttons button:hover {
+    background-color: #7b2ff7;
+    color: #fff;
+}
+
+.card-buttons .btn-delete:hover {
+    background-color: #ff0055;
+    border-color: #ff0055;
+    color: #fff;
+}
+
+/* ── EMPTY MESSAGE ── */
+.empty-msg {
+    font-style: italic;
+    color: #bbb;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 0;
+}
