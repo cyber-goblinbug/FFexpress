@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── PAGE ── */
+body {
+    background-color: #2b1f14;
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% 0%, #3d2b18 0%, transparent 60%);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #2b1a0e;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+}
+
+/* ── HEADER ── */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+    color: #c8a96e;
+    text-decoration: none;
+    margin-bottom: 16px;
+    font-style: italic;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'IM Fell English', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: #f2e8d5;
+    letter-spacing: 3px;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.5);
+    font-style: italic;
+}
+
+/* ── MAIN ── */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ── NEWSPAPER RULE DIVIDER ── */
+.divider {
+    text-align: center;
+    color: #8b6914;
+    font-size: 12px;
+    letter-spacing: 8px;
+    margin: 8px 0 20px;
+}
+
+/* ── SECTIONS ── */
+section {
+    background-color: #f2e8d5;
+    background-image: linear-gradient(180deg, #ede0c4 0%, #f2e8d5 8%, #f2e8d5 92%, #ede0c4 100%);
+    border: 1px solid #8b6914;
+    border-top: 4px double #8b6914;
+    border-bottom: 4px double #8b6914;
+    padding: 32px 36px;
+    margin-bottom: 28px;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+}
+
+h2 {
+    font-family: 'IM Fell English', serif;
+    font-size: 28px;
+    color: #2b1a0e;
+    border-bottom: 2px solid #8b6914;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-family: 'IM Fell English', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #5c3a10;
+    margin-top: 22px;
+    margin-bottom: 12px;
+    border-bottom: 1px dashed #8b6914;
+    padding-bottom: 4px;
+}
+
+/* ── BUTTONS ── */
+#new-collection-btn,
+#new-story-btn {
+    font-family: 'IM Fell English', serif;
+    font-size: 16px;
+    font-style: italic;
+    background-color: #2b1a0e;
+    color: #f2e8d5;
+    border: 1px solid #8b6914;
+    padding: 10px 26px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+#new-collection-btn:hover,
+#new-story-btn:hover {
+    background-color: #4a2e10;
+}
+
+#back-to-collections-btn {
+    font-family: 'IM Fell English', serif;
+    font-size: 14px;
+    font-style: italic;
+    background-color: transparent;
+    color: #8b6914;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#back-to-collections-btn:hover {
+    text-decoration: underline;
+}
+
+/* ── FILTER BUTTONS ── */
+#filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.filter-btn {
+    font-family: 'IM Fell English', serif;
+    font-size: 13px;
+    font-style: italic;
+    padding: 5px 16px;
+    border: 1px solid #8b6914;
+    background-color: transparent;
+    color: #5c3a10;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background-color: #e8d5b0;
+}
+
+.filter-btn.active {
+    background-color: #2b1a0e;
+    color: #f2e8d5;
+    border-color: #2b1a0e;
+}
+
+/* ── FORM ── */
+form label {
+    display: block;
+    font-family: 'IM Fell English', serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #5c3a10;
+    margin-top: 16px;
+    margin-bottom: 4px;
+    letter-spacing: 1px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    background-color: #fdf8ee;
+    border: 1px solid #8b6914;
+    padding: 8px 12px;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 14px;
+    color: #2b1a0e;
+    outline: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #2b1a0e;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+/* ── FORM BUTTONS ── */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.form-buttons button {
+    font-family: 'IM Fell English', serif;
+    font-size: 15px;
+    font-style: italic;
+    padding: 8px 22px;
+    border: 1px solid #8b6914;
+    cursor: pointer;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #2b1a0e;
+    color: #f2e8d5;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #4a2e10;
+}
+
+.form-buttons button[type="button"] {
+    background-color: transparent;
+    color: #5c3a10;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #e8d5b0;
+}
+
+/* ── COLLECTION GRID ── */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 700px) { .collection-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .collection-grid { grid-template-columns: 1fr; } }
+
+/* ── COLLECTION CARD ── */
+.collection-card {
+    background-color: #fdf8ee;
+    border: 1px solid #8b6914;
+    border-top: 3px double #8b6914;
+    padding: 20px;
+}
+
+.collection-card h4 {
+    font-family: 'IM Fell English', serif;
+    font-size: 17px;
+    color: #2b1a0e;
+    margin-bottom: 6px;
+}
+
+.collection-card p {
+    font-size: 13px;
+    font-style: italic;
+    color: #7a5230;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* ── STORY GRID ── */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 700px) { .story-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .story-grid { grid-template-columns: 1fr; } }
+
+/* ── STORY CARD ── */
+.story-card {
+    background-color: #fdf8ee;
+    border: 1px solid #8b6914;
+    padding: 18px;
+}
+
+.story-card h4 {
+    font-family: 'IM Fell English', serif;
+    font-size: 16px;
+    color: #2b1a0e;
+    margin-bottom: 4px;
+}
+
+.story-card .genre {
+    font-size: 12px;
+    font-style: italic;
+    color: #7a5230;
+    margin-bottom: 8px;
+}
+
+.story-card p {
+    font-size: 13px;
+    color: #5c3a10;
+    margin-bottom: 6px;
+}
+
+/* ── STATUS BADGE ── */
+.status-badge {
+    display: inline-block;
+    font-family: 'IM Fell English', serif;
+    font-size: 11px;
+    font-style: italic;
+    padding: 2px 8px;
+    border: 1px solid #8b6914;
+    margin-bottom: 10px;
+    color: #5c3a10;
+}
+
+/* ── CARD BUTTONS ── */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.card-buttons button {
+    font-family: 'IM Fell English', serif;
+    font-size: 12px;
+    font-style: italic;
+    padding: 4px 10px;
+    border: 1px solid #8b6914;
+    cursor: pointer;
+    background-color: transparent;
+    color: #5c3a10;
+}
+
+.card-buttons button:hover {
+    background-color: #2b1a0e;
+    color: #f2e8d5;
+    border-color: #2b1a0e;
+}
+
+.card-buttons .btn-delete:hover {
+    background-color: #8b1a1a;
+    border-color: #8b1a1a;
+    color: #fff;
+}
+
+/* ── EMPTY MESSAGE ── */
+.empty-msg {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: #9a7440;
+    font-size: 15px;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 0;
+}

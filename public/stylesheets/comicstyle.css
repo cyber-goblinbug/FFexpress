@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── PAGE ── */
+body {
+    background-color: #f5e642;
+    background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 40px,
+        rgba(0,0,0,0.04) 40px, rgba(0,0,0,0.04) 41px
+    ),
+    repeating-linear-gradient(
+        90deg, transparent, transparent 40px,
+        rgba(0,0,0,0.04) 40px, rgba(0,0,0,0.04) 41px
+    );
+    font-family: 'Comic Neue', cursive;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+}
+
+/* ── HEADER ── */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #d62828;
+    text-decoration: none;
+    margin-bottom: 12px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 80px;
+    color: #1a1a1a;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 3px #1a1a1a;
+    paint-order: stroke fill;
+    text-shadow:
+        4px 4px 0px #d62828,
+        8px 8px 0px #1a1a1a;
+}
+
+/* ── MAIN ── */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ── SECTIONS ── */
+section {
+    background-color: #fff;
+    border: 3px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow: 6px 6px 0px #1a1a1a;
+}
+
+h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #d62828;
+    text-transform: uppercase;
+    border-bottom: 3px solid #1a1a1a;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+/* ── BUTTONS ── */
+#new-series-btn,
+#new-issue-btn,
+#new-arc-btn {
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: #d62828;
+    color: #fff;
+    border: 3px solid #1a1a1a;
+    padding: 10px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+#new-series-btn:hover,
+#new-issue-btn:hover,
+#new-arc-btn:hover {
+    background-color: #a81e1e;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+#back-to-series-btn {
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+    background-color: transparent;
+    color: #d62828;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: block;
+}
+
+#back-to-series-btn:hover {
+    text-decoration: underline;
+}
+
+/* ── TABS ── */
+#series-tabs {
+    background-color: #f5e642;
+    display: flex;
+    gap: 8px;
+    padding: 16px 20px;
+    box-shadow: 6px 6px 0px #1a1a1a;
+}
+
+.tab-btn {
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border: 3px solid #1a1a1a;
+    background-color: #fff;
+    color: #1a1a1a;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+.tab-btn.active {
+    background-color: #d62828;
+    color: #fff;
+}
+
+.tab-btn:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+/* ── FORM ── */
+form label {
+    display: block;
+    font-family: 'Bangers', cursive;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-top: 16px;
+    margin-bottom: 4px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    background-color: #fffde7;
+    border: 2px solid #1a1a1a;
+    border-radius: 2px;
+    padding: 8px 12px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 15px;
+    color: #1a1a1a;
+    outline: none;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+/* ── FORM BUTTONS ── */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 22px;
+    border: 3px solid #1a1a1a;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #d62828;
+    color: #fff;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #a81e1e;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #fff;
+    color: #1a1a1a;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #f0f0f0;
+}
+
+/* ── SERIES GRID ── */
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) { .series-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .series-grid { grid-template-columns: 1fr; } }
+
+/* ── SERIES CARD ── */
+.series-card {
+    background-color: #fff;
+    border: 3px solid #1a1a1a;
+    border-radius: 4px;
+    padding: 18px;
+    box-shadow: 4px 4px 0px #1a1a1a;
+}
+
+.series-card h4 {
+    font-family: 'Bangers', cursive;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #d62828;
+    margin-bottom: 6px;
+}
+
+.series-card p {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+/* ── ISSUE / ARC GRID ── */
+.issue-grid,
+.arc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) {
+    .issue-grid, .arc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── ISSUE / ARC CARD ── */
+.issue-card,
+.arc-card {
+    background-color: #fffde7;
+    border: 2px solid #1a1a1a;
+    border-radius: 3px;
+    padding: 16px;
+    box-shadow: 3px 3px 0px #1a1a1a;
+}
+
+.issue-card h4,
+.arc-card h4 {
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.issue-card p,
+.arc-card p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 6px;
+}
+
+/* ── STATUS BADGE ── */
+.status-badge {
+    display: inline-block;
+    font-family: 'Bangers', cursive;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 2px solid #1a1a1a;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    background-color: #f5e642;
+    color: #1a1a1a;
+}
+
+/* ── CARD BUTTONS ── */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.card-buttons button {
+    font-family: 'Bangers', cursive;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 2px solid #1a1a1a;
+    border-radius: 2px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #1a1a1a;
+    box-shadow: 2px 2px 0px #1a1a1a;
+}
+
+.card-buttons button:hover {
+    background-color: #f5e642;
+}
+
+.card-buttons .btn-delete:hover {
+    background-color: #d62828;
+    color: #fff;
+}
+
+/* ── EMPTY MESSAGE ── */
+.empty-msg {
+    font-style: italic;
+    color: #888;
+    font-size: 14px;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 0;
+}

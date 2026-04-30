@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+/* ── RESET ── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── PAGE ── */
+body {
+    background-color: #0a0a1a;
+    background-image:
+        repeating-linear-gradient(
+            0deg, transparent, transparent 3px,
+            rgba(0, 255, 0, 0.03) 3px, rgba(0, 255, 0, 0.03) 4px
+        );
+    font-family: 'VT323', monospace;
+    color: #00ff41;
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+}
+
+/* ── HEADER ── */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: #ff00ff;
+    text-decoration: none;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+}
+
+.back-link:hover {
+    color: #fff;
+}
+
+h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(20px, 4vw, 40px);
+    color: #00ff41;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 10px #00ff41,
+        0 0 30px #00ff41,
+        3px 3px 0px #003300;
+    line-height: 1.4;
+}
+
+/* ── MAIN ── */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ── SECTIONS ── */
+section {
+    background-color: #0d0d1f;
+    border: 2px solid #00ff41;
+    border-radius: 0px;
+    padding: 30px;
+    margin-bottom: 24px;
+    box-shadow:
+        0 0 10px rgba(0, 255, 65, 0.2),
+        inset 0 0 20px rgba(0, 255, 65, 0.03);
+}
+
+h2 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: #ffff00;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #00ff41;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #ffff00;
+}
+
+h3 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    color: #ff00ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 24px;
+    margin-bottom: 14px;
+    text-shadow: 0 0 6px #ff00ff;
+}
+
+/* ── BUTTONS ── */
+#new-game-btn,
+#new-char-btn,
+#new-story-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #000;
+    color: #00ff41;
+    border: 2px solid #00ff41;
+    padding: 12px 20px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.4);
+    line-height: 1.6;
+}
+
+#new-game-btn:hover,
+#new-char-btn:hover,
+#new-story-btn:hover {
+    background-color: #00ff41;
+    color: #000;
+}
+
+#back-to-games-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    background-color: transparent;
+    color: #ff00ff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 14px;
+    display: block;
+    text-shadow: 0 0 6px #ff00ff;
+}
+
+#back-to-games-btn:hover {
+    color: #fff;
+}
+
+/* ── TABS ── */
+#game-tabs {
+    background-color: #050510;
+    border: 2px solid #00ff41;
+    display: flex;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.tab-btn {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    border: none;
+    border-right: 2px solid #00ff41;
+    background-color: transparent;
+    color: #00ff41;
+    cursor: pointer;
+    line-height: 1.6;
+}
+
+.tab-btn:last-child {
+    border-right: none;
+}
+
+.tab-btn.active {
+    background-color: #00ff41;
+    color: #000;
+}
+
+.tab-btn:hover {
+    background-color: #003300;
+}
+
+/* ── FORM ── */
+form label {
+    display: block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffff00;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    line-height: 1.6;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    background-color: #000;
+    border: 2px solid #00ff41;
+    padding: 10px 12px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: #00ff41;
+    outline: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+
+form select option {
+    background-color: #0a0a1a;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+/* ── FORM BUTTONS ── */
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    border: 2px solid #00ff41;
+    cursor: pointer;
+    line-height: 1.6;
+}
+
+.form-buttons button[type="submit"] {
+    background-color: #003300;
+    color: #00ff41;
+}
+
+.form-buttons button[type="submit"]:hover {
+    background-color: #00ff41;
+    color: #000;
+}
+
+.form-buttons button[type="button"] {
+    background-color: transparent;
+    color: #ff00ff;
+    border-color: #ff00ff;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #ff00ff;
+    color: #000;
+}
+
+/* ── GAME GRID ── */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) { .game-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .game-grid { grid-template-columns: 1fr; } }
+
+/* ── GAME CARD ── */
+.game-card {
+    background-color: #050510;
+    border: 2px solid #00ff41;
+    padding: 18px;
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.15);
+}
+
+.game-card h4 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    color: #ffff00;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    line-height: 1.5;
+    text-shadow: 0 0 6px #ffff00;
+}
+
+.game-card p {
+    font-size: 16px;
+    color: #00ff41;
+    margin-bottom: 6px;
+}
+
+/* ── ENTRY GRID ── */
+.entry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 700px) { .entry-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 440px) { .entry-grid { grid-template-columns: 1fr; } }
+
+/* ── ENTRY CARD ── */
+.entry-card {
+    background-color: #050510;
+    border: 2px solid #333;
+    padding: 16px;
+}
+
+.entry-card:hover {
+    border-color: #00ff41;
+}
+
+.entry-card h4 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 10px;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.entry-card p {
+    font-size: 15px;
+    color: #00ff41;
+    margin-bottom: 6px;
+}
+
+/* ── STATUS BADGE ── */
+.status-badge {
+    display: inline-block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.status-draft       { color: #888; border-color: #888; }
+.status-in-progress { color: #ffff00; border-color: #ffff00; }
+.status-complete    { color: #00ff41; border-color: #00ff41; }
+
+/* ── CARD BUTTONS ── */
+.card-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.card-buttons button {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    border: 1px solid #00ff41;
+    cursor: pointer;
+    background-color: transparent;
+    color: #00ff41;
+    line-height: 1.6;
+}
+
+.card-buttons button:hover {
+    background-color: #00ff41;
+    color: #000;
+}
+
+.card-buttons .btn-delete:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff;
+}
+
+/* ── EMPTY MESSAGE ── */
+.empty-msg {
+    font-size: 18px;
+    color: #333;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px 0;
+}
