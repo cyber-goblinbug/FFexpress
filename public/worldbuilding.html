@@ -4,16 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worldbuilding — Akashic Records</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
-    <script src="/javascripts/finals.js" defer></script>
+    <link rel="stylesheet" href="/stylesheets/worldstyle.css">
+    <script src="/javascripts/worldb.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Worldbuilding</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your worldbuilding writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Worldbuilding</h1>
+    <p class="subtitle">Chronicle your world, one entry at a time</p>
+</header>
+
+<main>
+
+    <!-- NEW ENTRY BUTTON -->
+    <section id="dashboard">
+        <button id="new-entry-btn">+ Add New Entry</button>
+    </section>
+
+    <!-- CREATE ENTRY FORM (hidden by default) -->
+    <section id="create-entry" style="display: none;">
+        <h2>New Entry</h2>
+
+        <form id="entry-form">
+
+            <label for="entry-title">Entry Title</label>
+            <input type="text" id="entry-title" placeholder="e.g. The Kingdom of Valdris" required>
+
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="lore">Lore</option>
+                <option value="maps">Maps & Geography</option>
+                <option value="factions">Factions & Organizations</option>
+                <option value="characters">Characters</option>
+                <option value="history">History & Timeline</option>
+                <option value="magic">Magic & Systems</option>
+                <option value="culture">Culture & Religion</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="entry-notes">Notes</label>
+            <textarea id="entry-notes" placeholder="Describe this entry..." rows="5"></textarea>
+
+            <label for="entry-status">Status</label>
+            <select id="entry-status">
+                <option value="draft">Draft</option>
+                <option value="in-progress">In Progress</option>
+                <option value="complete">Complete</option>
+            </select>
+
+            <div class="form-buttons">
+                <button type="submit">Save Entry</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- CATEGORY FILTER BAR -->
+    <section id="filter-bar">
+        <h2>The Archive</h2>
+        <div id="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="lore">Lore</button>
+            <button class="filter-btn" data-filter="maps">Maps & Geography</button>
+            <button class="filter-btn" data-filter="factions">Factions</button>
+            <button class="filter-btn" data-filter="characters">Characters</button>
+            <button class="filter-btn" data-filter="history">History</button>
+            <button class="filter-btn" data-filter="magic">Magic & Systems</button>
+            <button class="filter-btn" data-filter="culture">Culture</button>
+            <button class="filter-btn" data-filter="other">Other</button>
+        </div>
+    </section>
+
+    <!-- ENTRY LIBRARY -->
+    <section id="entry-library">
+        <div id="entry-grid">
+            <p class="empty-msg">No entries yet. Start building your world.</p>
+        </div>
+    </section>
+
+</main>
+
 </body>
 </html>
