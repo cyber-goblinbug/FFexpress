@@ -3,17 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Games — Akashic Records</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
-    <script src="/javascripts/finals.js" defer></script>
+    <meta name="author" content="Willie Weatherspoon">
+    <meta name="description" content="Creative writing progress tracker">
+    <meta name="keywords" content="writing, tracker, games">
+    <title>Game Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/gamestyle.css">
+    <script src="/javascripts/games.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Games</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your game writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Game Tracker</h1>
+</header>
+
+<main>
+
+    <!-- NEW GAME BUTTON -->
+    <section id="dashboard">
+        <button id="new-game-btn">+ Start New Game</button>
+    </section>
+
+    <!-- CREATE GAME FORM -->
+    <section id="create-game" style="display: none;">
+        <h2>New Game Project</h2>
+        <form id="game-form">
+
+            <label for="game-title">Game Title</label>
+            <input type="text" id="game-title" placeholder="e.g. Echoes of the Void" required>
+
+            <label for="game-genre">Genre</label>
+            <input type="text" id="game-genre" placeholder="e.g. RPG, Platformer, Visual Novel">
+
+            <label for="game-engine">Engine / Platform</label>
+            <input type="text" id="game-engine" placeholder="e.g. Unity, Godot, RPG Maker">
+
+            <label for="game-desc">Concept</label>
+            <textarea id="game-desc" placeholder="What is this game about?" rows="3"></textarea>
+
+            <div class="form-buttons">
+                <button type="submit">Create Game</button>
+                <button type="button" id="cancel-game-btn">Cancel</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- GAME LIBRARY -->
+    <div id="game-library-view">
+        <section id="game-library">
+            <h2>Game Library</h2>
+
+            <h3>In Development</h3>
+            <div id="active-games" class="game-grid">
+                <p class="empty-msg">No games in development yet.</p>
+            </div>
+
+            <h3>Finished</h3>
+            <div id="finished-games" class="game-grid">
+                <p class="empty-msg">No finished games yet.</p>
+            </div>
+
+            <h3>Shelved</h3>
+            <div id="abandoned-games" class="game-grid">
+                <p class="empty-msg">No shelved games.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- GAME DETAIL VIEW -->
+    <div id="game-detail-view" style="display: none;">
+
+        <section id="game-header">
+            <button id="back-to-games-btn">← All Games</button>
+            <h2 id="game-detail-title"></h2>
+            <p id="game-detail-desc" class="game-subtitle"></p>
+        </section>
+
+        <!-- TABS -->
+        <section id="game-tabs">
+            <button class="tab-btn active" data-tab="characters">Characters</button>
+            <button class="tab-btn" data-tab="story">Story</button>
+        </section>
+
+        <!-- CHARACTERS TAB -->
+        <div id="tab-characters">
+            <section id="char-dashboard">
+                <button id="new-char-btn">+ Add Character</button>
+            </section>
+
+            <section id="create-char" style="display: none;">
+                <h2>New Character</h2>
+                <form id="char-form">
+
+                    <label for="char-name">Character Name</label>
+                    <input type="text" id="char-name" placeholder="e.g. Kira Voss" required>
+
+                    <label for="char-role">Role</label>
+                    <input type="text" id="char-role" placeholder="e.g. Protagonist, Boss, NPC">
+
+                    <label for="char-notes">Notes</label>
+                    <textarea id="char-notes" placeholder="Describe this character..." rows="3"></textarea>
+
+                    <label for="char-status">Status</label>
+                    <select id="char-status">
+                        <option value="draft">Draft</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Character</button>
+                        <button type="button" id="cancel-char-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="char-list">
+                <h2>Characters</h2>
+                <div id="char-grid" class="entry-grid">
+                    <p class="empty-msg">No characters yet.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- STORY TAB -->
+        <div id="tab-story" style="display: none;">
+            <section id="story-dashboard">
+                <button id="new-story-btn">+ Add Story Entry</button>
+            </section>
+
+            <section id="create-story" style="display: none;">
+                <h2>New Story Entry</h2>
+                <form id="story-form">
+
+                    <label for="story-title">Title</label>
+                    <input type="text" id="story-title" placeholder="e.g. Act 1 - The Awakening" required>
+
+                    <label for="story-notes">Notes</label>
+                    <textarea id="story-notes" placeholder="Outline or narrative details..." rows="4"></textarea>
+
+                    <label for="story-status">Status</label>
+                    <select id="story-status">
+                        <option value="draft">Draft</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Entry</button>
+                        <button type="button" id="cancel-story-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="story-list">
+                <h2>Story</h2>
+                <div id="story-grid" class="entry-grid">
+                    <p class="empty-msg">No story entries yet.</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</main>
+
 </body>
 </html>

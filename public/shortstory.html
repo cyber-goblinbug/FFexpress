@@ -3,17 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Short Stories — Akashic Records</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
-    <script src="/javascripts/finals.js" defer></script>
+    <meta name="author" content="Willie Weatherspoon">
+    <meta name="description" content="Creative writing progress tracker">
+    <meta name="keywords" content="writing, tracker, short stories">
+    <title>Short Story Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/shortstyle.css">
+    <script src="/javascripts/shortstory.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Short Stories</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your short story writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Short Story Tracker</h1>
+</header>
+
+<main>
+
+    <!-- NEW COLLECTION BUTTON -->
+    <section id="dashboard">
+        <button id="new-collection-btn">+ New Collection</button>
+    </section>
+
+    <!-- CREATE COLLECTION FORM -->
+    <section id="create-collection" style="display: none;">
+        <h2>New Collection</h2>
+        <form id="collection-form">
+
+            <label for="collection-title">Collection Title</label>
+            <input type="text" id="collection-title" placeholder="e.g. Tales of the Forgotten" required>
+
+            <label for="collection-desc">Description</label>
+            <textarea id="collection-desc" placeholder="What is this collection about?" rows="3"></textarea>
+
+            <div class="form-buttons">
+                <button type="submit">Create Collection</button>
+                <button type="button" id="cancel-collection-btn">Cancel</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- COLLECTION LIBRARY VIEW -->
+    <div id="collection-library-view">
+        <section id="collection-library">
+            <h2>Collections</h2>
+            <div id="collection-grid" class="collection-grid">
+                <p class="empty-msg">No collections yet. Start your first anthology.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- COLLECTION DETAIL VIEW -->
+    <div id="collection-detail-view" style="display: none;">
+
+        <section id="collection-header">
+            <button id="back-to-collections-btn">← All Collections</button>
+            <h2 id="collection-detail-title"></h2>
+            <p id="collection-detail-desc" class="collection-subtitle"></p>
+        </section>
+
+        <!-- NEW STORY BUTTON -->
+        <section id="story-dashboard">
+            <button id="new-story-btn">+ Add Story</button>
+        </section>
+
+        <!-- CREATE STORY FORM -->
+        <section id="create-story" style="display: none;">
+            <h2>New Story</h2>
+            <form id="story-form">
+
+                <label for="story-title">Title</label>
+                <input type="text" id="story-title" placeholder="Story title" required>
+
+                <label for="story-genre">Genre</label>
+                <input type="text" id="story-genre" placeholder="e.g. Horror, Fantasy, Literary Fiction">
+
+                <label for="story-goal">Daily Word Count Goal</label>
+                <input type="number" id="story-goal" placeholder="e.g. 500" required>
+
+                <label for="story-notes">Notes</label>
+                <textarea id="story-notes" placeholder="What is this story about?" rows="3"></textarea>
+
+                <div class="form-buttons">
+                    <button type="submit">Add Story</button>
+                    <button type="button" id="cancel-story-btn">Cancel</button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- FILTER BAR -->
+        <section id="filter-bar">
+            <h2>Stories</h2>
+            <div id="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="finished">Finished</button>
+                <button class="filter-btn" data-filter="abandoned">Abandoned</button>
+            </div>
+        </section>
+
+        <!-- STORY GRID -->
+        <section id="story-library">
+            <div id="story-grid" class="story-grid">
+                <p class="empty-msg">No stories in this collection yet.</p>
+            </div>
+        </section>
+
+    </div>
+
+</main>
+
 </body>
 </html>

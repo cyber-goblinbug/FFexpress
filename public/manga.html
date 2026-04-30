@@ -3,17 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manga — Akashic Records</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
-    <script src="/javascripts/finals.js" defer></script>
+    <meta name="author" content="Willie Weatherspoon">
+    <meta name="description" content="Creative writing progress tracker">
+    <meta name="keywords" content="writing, tracker, manga">
+    <title>Manga Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/mangastyle.css">
+    <script src="/javascripts/manga.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Manga</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your manga writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Manga Tracker</h1>
+</header>
+
+<main>
+
+    <!-- NEW SERIES BUTTON -->
+    <section id="dashboard">
+        <button id="new-series-btn">+ Start New Series</button>
+    </section>
+
+    <!-- CREATE SERIES FORM -->
+    <section id="create-series" style="display: none;">
+        <h2>New Series</h2>
+        <form id="series-form">
+
+            <label for="series-title">Series Title</label>
+            <input type="text" id="series-title" placeholder="e.g. Kage no Tōshi" required>
+
+            <label for="series-genre">Genre</label>
+            <input type="text" id="series-genre" placeholder="e.g. Shonen, Shojo, Seinen">
+
+            <label for="reading-direction">Reading Direction</label>
+            <select id="reading-direction">
+                <option value="right-to-left">Right to Left (Traditional)</option>
+                <option value="left-to-right">Left to Right (Western)</option>
+            </select>
+
+            <label for="series-desc">Description</label>
+            <textarea id="series-desc" placeholder="What is this series about?" rows="3"></textarea>
+
+            <label for="total-volumes">Planned Volumes</label>
+            <input type="number" id="total-volumes" placeholder="e.g. 10">
+
+            <div class="form-buttons">
+                <button type="submit">Create Series</button>
+                <button type="button" id="cancel-series-btn">Cancel</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- SERIES LIBRARY -->
+    <div id="series-library-view">
+        <section id="series-library">
+            <h2>Series Library</h2>
+
+            <h3>Ongoing</h3>
+            <div id="active-series" class="series-grid">
+                <p class="empty-msg">No ongoing series yet.</p>
+            </div>
+
+            <h3>Completed</h3>
+            <div id="finished-series" class="series-grid">
+                <p class="empty-msg">No completed series yet.</p>
+            </div>
+
+            <h3>Dropped</h3>
+            <div id="abandoned-series" class="series-grid">
+                <p class="empty-msg">No dropped series.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERIES DETAIL VIEW -->
+    <div id="series-detail-view" style="display: none;">
+
+        <section id="series-header">
+            <button id="back-to-series-btn">← All Series</button>
+            <h2 id="series-detail-title"></h2>
+            <p id="series-detail-desc" class="series-subtitle"></p>
+        </section>
+
+        <!-- TABS -->
+        <section id="series-tabs">
+            <button class="tab-btn active" data-tab="chapters">Chapters</button>
+            <button class="tab-btn" data-tab="volumes">Volumes</button>
+            <button class="tab-btn" data-tab="arcs">Arcs</button>
+        </section>
+
+        <!-- CHAPTERS TAB -->
+        <div id="tab-chapters">
+            <section id="chapter-dashboard">
+                <button id="new-chapter-btn">+ Add Chapter</button>
+            </section>
+
+            <section id="create-chapter" style="display: none;">
+                <h2>New Chapter</h2>
+                <form id="chapter-form">
+
+                    <label for="chapter-number">Chapter Number</label>
+                    <input type="number" id="chapter-number" placeholder="e.g. 1" required>
+
+                    <label for="chapter-title">Chapter Title</label>
+                    <input type="text" id="chapter-title" placeholder="e.g. The Awakening">
+
+                    <label for="chapter-pages">Page Count</label>
+                    <input type="number" id="chapter-pages" placeholder="e.g. 18">
+
+                    <label for="chapter-panels">Panel Count</label>
+                    <input type="number" id="chapter-panels" placeholder="e.g. 60">
+
+                    <label for="chapter-status">Status</label>
+                    <select id="chapter-status">
+                        <option value="planned">Planned</option>
+                        <option value="scripting">Scripting</option>
+                        <option value="sketching">Sketching</option>
+                        <option value="inking">Inking</option>
+                        <option value="toning">Toning</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <label for="chapter-notes">Notes</label>
+                    <textarea id="chapter-notes" placeholder="Any notes for this chapter..." rows="3"></textarea>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Chapter</button>
+                        <button type="button" id="cancel-chapter-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="chapter-list">
+                <h2>Chapters</h2>
+                <div id="chapter-grid" class="chapter-grid">
+                    <p class="empty-msg">No chapters added yet.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- VOLUMES TAB -->
+        <div id="tab-volumes" style="display: none;">
+            <section id="volume-dashboard">
+                <button id="new-volume-btn">+ Add Volume</button>
+            </section>
+
+            <section id="create-volume" style="display: none;">
+                <h2>New Volume</h2>
+                <form id="volume-form">
+
+                    <label for="volume-number">Volume Number</label>
+                    <input type="number" id="volume-number" placeholder="e.g. 1" required>
+
+                    <label for="volume-chapters">Chapters Included</label>
+                    <input type="text" id="volume-chapters" placeholder="e.g. Ch. 1 - Ch. 8">
+
+                    <label for="volume-status">Status</label>
+                    <select id="volume-status">
+                        <option value="planned">Planned</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Volume</button>
+                        <button type="button" id="cancel-volume-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="volume-list">
+                <h2>Volumes</h2>
+                <div id="volume-grid" class="volume-grid">
+                    <p class="empty-msg">No volumes added yet.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ARCS TAB -->
+        <div id="tab-arcs" style="display: none;">
+            <section id="arc-dashboard">
+                <button id="new-arc-btn">+ Add Arc</button>
+            </section>
+
+            <section id="create-arc" style="display: none;">
+                <h2>New Arc</h2>
+                <form id="arc-form">
+
+                    <label for="arc-title">Arc Title</label>
+                    <input type="text" id="arc-title" placeholder="e.g. The Tournament Arc" required>
+
+                    <label for="arc-chapters">Chapters Covered</label>
+                    <input type="text" id="arc-chapters" placeholder="e.g. Ch. 10 - Ch. 25">
+
+                    <label for="arc-notes">Notes</label>
+                    <textarea id="arc-notes" placeholder="What happens in this arc?" rows="3"></textarea>
+
+                    <label for="arc-status">Status</label>
+                    <select id="arc-status">
+                        <option value="planned">Planned</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Arc</button>
+                        <button type="button" id="cancel-arc-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="arc-list">
+                <h2>Story Arcs</h2>
+                <div id="arc-grid" class="arc-grid">
+                    <p class="empty-msg">No arcs added yet.</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</main>
+
 </body>
 </html>

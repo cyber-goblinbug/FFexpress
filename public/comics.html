@@ -3,17 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comics — Akashic Records</title>
-    <link rel="stylesheet" href="/stylesheets/finalshome.css">
-    <script src="/javascripts/finals.js" defer></script>
+    <meta name="author" content="Willie Weatherspoon">
+    <meta name="description" content="Creative writing progress tracker">
+    <meta name="keywords" content="writing, tracker, comics">
+    <title>Comics Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/comicstyle.css">
+    <script src="/javascripts/comics.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Comics</h1>
-        <nav><a href="/">Home</a></nav>
-    </header>
-    <main>
-        <p>Track your comic writing here.</p>
-    </main>
+
+<header>
+    <a href="/" class="back-link">← Back to Archive</a>
+    <h1>Comics Tracker</h1>
+</header>
+
+<main>
+
+    <!-- NEW SERIES BUTTON -->
+    <section id="dashboard">
+        <button id="new-series-btn">+ Start New Series</button>
+    </section>
+
+    <!-- CREATE SERIES FORM -->
+    <section id="create-series" style="display: none;">
+        <h2>New Series</h2>
+        <form id="series-form">
+
+            <label for="series-title">Series Title</label>
+            <input type="text" id="series-title" placeholder="e.g. The Darkened Age" required>
+
+            <label for="series-genre">Genre</label>
+            <input type="text" id="series-genre" placeholder="e.g. Superhero, Horror, Sci-Fi">
+
+            <label for="series-desc">Description</label>
+            <textarea id="series-desc" placeholder="What is this series about?" rows="3"></textarea>
+
+            <label for="total-issues">Planned Issues</label>
+            <input type="number" id="total-issues" placeholder="e.g. 12" required>
+
+            <div class="form-buttons">
+                <button type="submit">Create Series</button>
+                <button type="button" id="cancel-series-btn">Cancel</button>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- SERIES LIBRARY VIEW -->
+    <div id="series-library-view">
+        <section id="series-library">
+            <h2>Series Library</h2>
+
+            <h3>Active</h3>
+            <div id="active-series" class="series-grid">
+                <p class="empty-msg">No active series yet.</p>
+            </div>
+
+            <h3>Finished</h3>
+            <div id="finished-series" class="series-grid">
+                <p class="empty-msg">No finished series yet.</p>
+            </div>
+
+            <h3>Abandoned</h3>
+            <div id="abandoned-series" class="series-grid">
+                <p class="empty-msg">No abandoned series.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERIES DETAIL VIEW -->
+    <div id="series-detail-view" style="display: none;">
+
+        <section id="series-header">
+            <button id="back-to-series-btn">← All Series</button>
+            <h2 id="series-detail-title"></h2>
+            <p id="series-detail-desc" class="series-subtitle"></p>
+        </section>
+
+        <!-- ADD ISSUE / ARC TABS -->
+        <section id="series-tabs">
+            <button class="tab-btn active" data-tab="issues">Issues</button>
+            <button class="tab-btn" data-tab="arcs">Arcs</button>
+        </section>
+
+        <!-- ISSUES TAB -->
+        <div id="tab-issues">
+            <section id="issue-dashboard">
+                <button id="new-issue-btn">+ Add Issue</button>
+            </section>
+
+            <section id="create-issue" style="display: none;">
+                <h2>New Issue</h2>
+                <form id="issue-form">
+
+                    <label for="issue-number">Issue Number</label>
+                    <input type="number" id="issue-number" placeholder="e.g. 1" required>
+
+                    <label for="issue-title">Issue Title</label>
+                    <input type="text" id="issue-title" placeholder="e.g. The First Strike">
+
+                    <label for="issue-pages">Page Count</label>
+                    <input type="number" id="issue-pages" placeholder="e.g. 22">
+
+                    <label for="issue-panels">Panel Count</label>
+                    <input type="number" id="issue-panels" placeholder="e.g. 80">
+
+                    <label for="issue-status">Status</label>
+                    <select id="issue-status">
+                        <option value="planned">Planned</option>
+                        <option value="scripting">Scripting</option>
+                        <option value="sketching">Sketching</option>
+                        <option value="inking">Inking</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <label for="issue-notes">Notes</label>
+                    <textarea id="issue-notes" placeholder="Any notes for this issue..." rows="3"></textarea>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Issue</button>
+                        <button type="button" id="cancel-issue-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="issue-list">
+                <h2>Issues</h2>
+                <div id="issue-grid" class="issue-grid">
+                    <p class="empty-msg">No issues added yet.</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ARCS TAB -->
+        <div id="tab-arcs" style="display: none;">
+            <section id="arc-dashboard">
+                <button id="new-arc-btn">+ Add Arc</button>
+            </section>
+
+            <section id="create-arc" style="display: none;">
+                <h2>New Arc</h2>
+                <form id="arc-form">
+
+                    <label for="arc-title">Arc Title</label>
+                    <input type="text" id="arc-title" placeholder="e.g. The Fall of Ironhaven" required>
+
+                    <label for="arc-issues">Issues Covered</label>
+                    <input type="text" id="arc-issues" placeholder="e.g. #1 - #6">
+
+                    <label for="arc-notes">Notes</label>
+                    <textarea id="arc-notes" placeholder="What happens in this arc?" rows="3"></textarea>
+
+                    <label for="arc-status">Status</label>
+                    <select id="arc-status">
+                        <option value="planned">Planned</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="complete">Complete</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Arc</button>
+                        <button type="button" id="cancel-arc-btn">Cancel</button>
+                    </div>
+
+                </form>
+            </section>
+
+            <section id="arc-list">
+                <h2>Story Arcs</h2>
+                <div id="arc-grid" class="arc-grid">
+                    <p class="empty-msg">No arcs added yet.</p>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</main>
+
 </body>
 </html>
