@@ -120,3 +120,25 @@ main {
     max-width: 700px;
     color: #f5e6c8;
 }
+/* VIDEO BUTTON */
+.video-btn {
+    display: block;
+    margin: 40px auto 0;
+    width: fit-content;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3b200a;
+    text-decoration: none;
+    padding: 12px 32px;
+    border: 1px solid #b8975a;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.2s ease;
+}
+
+.video-btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
